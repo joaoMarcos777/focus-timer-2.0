@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #323238;
+  --timer-text-color: #e5e5e5;
+  --button-text-color: #323238;
+  --button-bg-color: #e1e1e6;
+  --button-bg-selected-text-color: #e5e5e5;
+  --button-bg-selected-color: #02799d;
+
+  font-size: clamp(40%, 1% + 2vw, 62.5%);
+}
+
+html.light {
+  --timer-text-color: #323238;
+  --bg-color: #fff;
+}
+
+html.light .ph-sun,
+html:not(.light) .ph-moon {
+  display: none;
+}
+
+#toggle-mode {
+  position: absolute;
+  right: 3.2rem;
+  top: 3.2rem;
+  font-size: 3.2rem;
+  line-height: 0;
+  color: var(--timer-text-color);
+}
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0px;
+  border: 0;
+  appearance: none;
+}
+
+html,
+body,
+button,
+input {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--timer-text-color);
+
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+
+#app {
+  display: grid;
+  justify-items: center;
+  gap: 4.8rem;
+}
+
+.flex {
+  display: flex;
+}
+
+#timer {
+  font-weight: 500;
+  font-size: 12.6rem;
+  line-height: 14.8rem;
+  margin-bottom: 2.4rem;
+}
+
+#controls {
+  gap: 4rem;
+}
+
+button {
+  background-color: transparent;
+  color: var(--timer-text-color);
+  cursor: pointer;
+  font-size: 4.8rem;
+}
+
+#sounds {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.2rem;
+}
+
+#sounds button {
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  cursor: pointer;
+  font-size: 4.8rem;
+  border-radius: 2.4rem;
+  padding: 4.8rem;
+}
+
+#sounds button.selected {
+  color: var(--button-bg-selected-text-color);
+  background-color: var(--button-bg-selected-color);
+}
+
+.running .ph-play-circle,
+.running .ph-timer,
+.running .ph-plus,
+.running .ph-minus,
+html:not(.running) .ph-pause-circle,
+html:not(.running) .ph-stop-circle {
+  display: none;
+}
+
+@media (min-width: 1000px) {
+  body {
+    max-width: 82rem;
+    margin: 0 auto;
+  }
+
+  #app {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 19.2rem;
+    place-items: center;
+  }
+}
