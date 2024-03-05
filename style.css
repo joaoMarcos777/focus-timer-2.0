@@ -77,10 +77,12 @@ body {
   font-size: 12.6rem;
   line-height: 14.8rem;
   margin-bottom: 2.4rem;
+  justify-content: center;
 }
 
 #controls {
   gap: 4rem;
+  justify-content: center;
 }
 
 button {
